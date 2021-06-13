@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Manager.Domain.Validators;
 
 namespace Manager.Domain.Entities
 {
@@ -20,7 +21,18 @@ namespace Manager.Domain.Entities
         public string Password { get; private set; }
         public override bool Validate()
         {
-            throw new NotImplementedException();
+            var Validator = new UserValidator();
+            var Validation = Validator.Validate(this);
+
+            if (!Validation.IsValid)
+            {
+                foreach (var error in Validation.Errors)
+
+                    _errors.Add(error.ErrorMessage);
+
+                throw new Exception("Alguns campos estão inválidos, por favor corrija-os!" + _errors[0]);
+            }
+            return true;
         }
         public void ChangeName(string name)
         {

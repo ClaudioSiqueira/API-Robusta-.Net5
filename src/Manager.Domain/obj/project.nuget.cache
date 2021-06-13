@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rrb8rwsnfQRQ0mQAaNNYlVvX70+yve/odCaJd8BrNdU81W6Hf6mqInRoeixbTCaxKywbTInj2cThiGlHUmR6Bg==",
+  "dgSpecHash": "8KNhMOzzoCLoSrv7aM6OI6eV/LOopdQ44Noq97gcJuiG0PCTb6+DTeTNGA6AaVquWKHdeFB5520bhYcarXUylw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Claudio\\Documents\\GitHub\\API-Robusta-.Net5\\src\\Manager.Domain\\Manager.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Claudio\\.nuget\\packages\\fluentvalidation\\10.2.3\\fluentvalidation.10.2.3.nupkg.sha512"
+  ],
   "logs": []
 }

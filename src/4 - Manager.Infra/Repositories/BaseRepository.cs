@@ -4,6 +4,7 @@ using Manager.Domain.Entities;
 using Manager.Infra.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Manager.Infra.Repositories
 {
@@ -26,7 +27,7 @@ namespace Manager.Infra.Repositories
 
         public virtual async Task<T> Get(long id)
         {
-            return _context.Set<T>()
+            return await _context.Set<T>()
                     .AsNoTracking()
                     .Where(x => x.id == id)
                     .FirstOrDefaultAsync();

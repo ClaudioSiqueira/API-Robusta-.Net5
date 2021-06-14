@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using Manager.Domain.Entities;
+using System.Collections.Generic;
 
 namespace Manager.Infra.Interfaces
 {
@@ -9,7 +10,7 @@ namespace Manager.Infra.Interfaces
         Task<T> Update(T obj);
         Task Remove(long id);
         Task<T> Get(long id);
-        Task<list<T>> Get();
+        Task<List<T>> Get();
 
     }
 }

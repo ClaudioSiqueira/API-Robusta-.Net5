@@ -12,6 +12,11 @@ namespace Manager.Infra.Context
         public ManagerContext(DbContextOptions<ManagerContext> options) : base(options)
         { }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySQL("Server=localhost;Database=usermenagerapi;Uid=root;Pwd=12345;");
+        }
+
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

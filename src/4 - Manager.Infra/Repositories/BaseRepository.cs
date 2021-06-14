@@ -1,9 +1,9 @@
-using System.Threading.Tasks;
+using System.Linq;
 using Manager.Infra.Context;
+using System.Threading.Tasks;
 using Manager.Domain.Entities;
 using Manager.Infra.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace Manager.Infra.Repositories
@@ -29,21 +29,21 @@ namespace Manager.Infra.Repositories
         {
             return await _context.Set<T>()
                     .AsNoTracking()
-                    .Where(x => x.id == id)
+                    .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
         }
 
         public virtual Task<List<T>> Get()
         {
-            return _context
+            return _context.Set<T>()
                     .AsNoTracking()
                     .ToListAsync();
         }
 
         public virtual async Task Remove(long id)
         {
-            var obj = await _context.Get(id);
+            var obj = await Get(id);
             if (obj != null)
             {
                 _context.Remove(obj);

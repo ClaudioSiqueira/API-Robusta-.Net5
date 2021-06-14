@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Manager.Infra.Context;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manager.Infra.Repositories
 {

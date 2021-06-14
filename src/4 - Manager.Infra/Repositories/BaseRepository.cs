@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Manager.Infra.Context;
+using Manager.Domain.Entities;
 using Manager.Infra.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
